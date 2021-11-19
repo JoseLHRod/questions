@@ -1,0 +1,1486 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Questions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css" integrity="sha512-FEQLazq9ecqLN5T6wWq26hCZf7kPqUbFC9vsHNbXMJtSZZWAcbJspT+/NEAQkBfFReZ8r9QlA9JHaAuo28MTJA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-1 col-md-1 col-lg-2 col-xl-2 text-center p-0 mt-3 mb-2"></div>
+                <div class="col-12 col-sm-10 col-md-10 col-lg-8 col-xl-8 text-center p-0 mt-3 mb-2">
+                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                        <h2 id="heading">Start building your job profile</h2>
+                        <p>Tell us a little bit about yourself.</p>
+                        <form action="index.php" method="post">
+                            <h2>I am a</h2>
+                            <select id="status" name="status" onChange="mostrar(this.value);">
+                                <option value="">Select an Option</option>
+                                <option value="cna">CNA</option>
+                                <option value="stna">STNA (state tested nursing assistant)</option>
+                                <option value="rn">RN</option>
+                                <option value="rnpd">RN Private Duty</option>
+                                <option value="rncm">RN case manager</option>
+                                <option value="lpn">LPN (Licensed Practical Nurse)</option>
+                                <option value="hha">HHA</option>
+                                <option value="caregiver">Caregiver</option>
+                                <option value="hcsr">Home Care Sales Representative</option>
+                                <option value="lic">Live in carer</option>
+                                <option value="cc">Companion Care</option>
+                                <option value="homemaker">Homemaker</option>
+                             </select>
+                        </form>                        
+
+                        <!--Form CNA-->
+                        <form id="cna"  class="msform" style="display: none;">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="personal"><strong>Personal Information</strong></li>
+                                <li id="location"><strong>General Information</strong></li>
+                                <li id="account"><strong>Profesional Information</strong></li>
+                                <li id="payment"><strong>Education and Training</strong></li>
+                                <li id="confirm"><strong>Interview Video</strong></li>
+                            </ul>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div> 
+                            
+                            <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Personal Information:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 1</h2>
+                                        </div>
+                                    </div> 
+                                    
+                                    <h3>Name</h3>
+                                    <label class="fieldlabels">First Name: *</label> <input type="text" name="fname" placeholder="First Name" /> 
+                                    <label class="fieldlabels">Last Name: *</label> <input type="text" name="lname" placeholder="Last Name" />
+                                    
+                                    <h3>Gender</h3>
+                                    <ol>
+                                        <li><label class="container-in">Male
+                                            <input type="radio" checked="checked" name="radio6">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">Female
+                                            <input type="radio" name="radio6">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>Social Security No.</h3>
+                                    <input type="number" name="social" placeholder="Social Security No." />
+                                    <p>Please Enter 9 Digit Social Security No.</p>
+                                    
+                                    <h3>Date of Birth</h3>
+                                    <input type="date" name="dateofbirth" placeholder="Date of Birth" />
+                                    
+                                    <h3>Highest Grade Completed</h3>
+                                    <ol>
+                                        <li><label class="container-in">8
+                                            <input type="radio" checked="checked" name="radio7">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">9
+                                            <input type="radio" name="radio7">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>Address</h3>
+                                    <input type="text" name="address1" placeholder="Address Line 1"/>                                    
+                                    <input type="text" name="address2" placeholder="Address Line 2"/>
+                                    <input type="text" name="city" placeholder="City"/>
+                                    <select>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    <input type="text" name="zip" placeholder="Zip/Postal"/>
+                                    
+                                    <h3>If Necessary, the best time to call me at home is</h3>
+                                    <input type="text" name="hour" placeholder="Hour" style="width: 50px"/>:
+                                    <input type="text" name="mmin" placeholder="Min"/>
+                                    <select>                                        
+                                        <option value="am">AM</option>
+                                        <option value="pm">PM</option>
+                                    </select>
+                                    
+                                    <h3>Phone number</h3>
+                                    <label class="fieldlabels">Phone Number: *</label> <input type="text" name="phno" placeholder="Phone Number" /> <label class="fieldlabels">Alternate Phone Number: *</label> <input type="text" name="phno_2" placeholder="Alternate Phone Number" />
+
+                                    
+                                    <h3>Email</h3>
+                                    <label class="fieldlabels">Email: *</label> <input type="email" name="email" placeholder="Email Id" />
+                                    
+                                </div> 
+                                
+                                <input href="#" type="button" name="next" class="next action-button" value="Next" />
+                            </fieldset>
+
+
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">General Information:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 2</h2>
+                                        </div>
+                                    </div> 
+                                    <h3>Are you legally eligible for employment in the United States?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio1">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio1">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>Do you have a reliable means of transportation to job assignment?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio2">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio2">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>How did you hear about us?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Walk IN
+                                            <input type="radio" checked="checked" name="radio3">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">Ad(Publication)
+                                            <input type="radio" name="radio3">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">Referred by
+                                            <input type="radio" name="radio3">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>Have you ever been convicted of a crime or violation other that a minor traffic infraction?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio4">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio4">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>Do you have any current indictments and / or pending criminal charges against you?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio5">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio5">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                                                        
+                                    
+                                </div> <input href="#" type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+
+
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Profesional Information:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 3</h2>
+                                        </div>
+                                    </div> 
+
+                                    <h3>Have a license / certification ever been issued in another state?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio8">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio8">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>Do you have a current valid license / certification?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio9">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio9">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                    
+                                    <h3>License/Certification Information</h3>
+                                    <label class="fieldlabels">License/Cert. Type</label> <input type="text" name="l1" placeholder="License/Cert. Type" />
+                                    <select>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    
+                                    <h3>License/Certification Information</h3>
+                                    <label class="fieldlabels">License/Cert. Type</label> <input type="text" name="l2" placeholder="License/Cert. Type" />
+                                    <select>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    
+                                    <h3>Specialty/Other</h3>
+                                    <label class="fieldlabels">License/Cert. Type</label> <input type="text" name="l3" placeholder="License/Cert. Type" />
+                                    <select>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    
+                                    <label class="fieldlabels">CPR Exp. Date</label> <input type="date" name="cpr" placeholder="CPR Exp. Date" />
+                                    
+                                    <label class="fieldlabels">ACLS Exp. Date</label> <input type="date" name="acls" placeholder="ACLS Exp. Date" />
+                                    
+                                    <label class="fieldlabels">Last Physical Exam Date</label> <input type="date" name="lpedate" placeholder="Last Physical Exam Date" />
+                                    
+                                    <label class="fieldlabels">Lab TB/Chest X-ray Date</label> <input type="date" name="labxray" placeholder="Lab TB/Chest X-ray Date" />
+                                    
+                                    <h3>Do you have an IV certification?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio10">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio10">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                  
+                                    <h3>Has your professional license, certification or registration ever been subject to disciplinary
+                                        action by ant state board or body such as by reprimand, suspension, and revocation, voluntary
+                                        surrender, consent order or fines?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio11">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio11">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                
+                                    <h3>Are you currently working under a consent order/restricted license from any state licensing
+                                        body or board?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio12">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio12">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                   
+                                    <h3>Are you aware of any pending complaints or investigation against your professional license,
+                                        certification or registration in any state ? To best of your knowledge?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio13">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio13">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                   
+                                    <h3>Do you have any restriction which would interfere with your ability to perform the essential
+                                        duties of the position for which you have applied?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio14">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio14">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                  
+                                    <h3>Do you have professional liability insurance?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio15">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio15">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                   
+                                    <h3>In the past two years, have you resided in any other state?</h3>
+                                    <ol>
+                                        <li><label class="container-in">Yes
+                                            <input type="radio" checked="checked" name="radio16">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">No
+                                            <input type="radio" name="radio16">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                   
+                                    
+                                </div> 
+
+                                <input href="#" type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                
+                            </fieldset>
+
+
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Education and Training:</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 4</h2>
+                                        </div>
+                                    </div> 
+                                     
+                                    <h3>Highest Grade Completed</h3>
+                                    <ol>
+                                        <li><label class="container-in">8
+                                            <input type="radio" checked="checked" name="radio17">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">9
+                                            <input type="radio" name="radio17">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">10
+                                            <input type="radio" name="radio17">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">11
+                                            <input type="radio" name="radio17">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">12
+                                            <input type="radio" name="radio17">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                    </ol>                                  
+                                    <h3>GED College</h3>
+                                    <ol>
+                                        <li><label class="container-in">1
+                                            <input type="radio" checked="checked" name="radio18">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">2
+                                            <input type="radio" name="radio18">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">3
+                                            <input type="radio" name="radio18">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">4
+                                            <input type="radio" name="radio18">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>                                        
+                                    </ol>                                    
+                                    <h3>Post Graduate</h3>
+                                    <ol>
+                                        <li><label class="container-in">1
+                                            <input type="radio" checked="checked" name="radio19">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">2
+                                            <input type="radio" name="radio19">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">3
+                                            <input type="radio" name="radio19">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">4
+                                            <input type="radio" name="radio19">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        <li><label class="container-in">5
+                                            <input type="radio" name="radio19">
+                                            <span class="checkmark"></span>
+                                            </label>
+                                        </li>                                       
+                                    </ol>                                    
+                                    <h3>1</h3>
+                                    <label class="fieldlabels">High School</label> <input type="text" name="hs1" placeholder="High School" />
+                                    <label class="fieldlabels">Address</label> <input type="text" name="add1" placeholder="Address" />
+                                    <label class="fieldlabels">Major</label> <input type="text" name="mayor" placeholder="Major" />
+                                    <label class="fieldlabels">No. Of Years Completed</label> <input type="text" name="nyears" placeholder="No. Of Years Completed" />
+                                    <label class="fieldlabels">Degrees(s) Obtained</label> <input type="text" name="nyears" placeholder="Degrees(s) Obtained" />
+                                    
+                                    <h3>2</h3>
+                                    <label class="fieldlabels">High School</label> <input type="text" name="hs1" placeholder="High School" />
+                                    <label class="fieldlabels">Address</label> <input type="text" name="add1" placeholder="Address" />
+                                    <label class="fieldlabels">Major</label> <input type="text" name="mayor" placeholder="Major" />
+                                    <label class="fieldlabels">No. Of Years Completed</label> <input type="text" name="nyears" placeholder="No. Of Years Completed" />
+                                    <label class="fieldlabels">Degrees(s) Obtained</label> <input type="text" name="nyears" placeholder="Degrees(s) Obtained" />
+                                    <label class="fieldlabels">Other Education or Special Training (Include Military)</label> <input type="textarea" name="othere" placeholder="" />
+                                    
+                                    
+                                </div> <input href="#" type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="fs-title">Interview Video</h2>
+                                        </div>
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 5</h2>
+                                        </div>
+                                    </div>
+                                    <h3>Interview Video</h3>                                    
+                                    
+                                    <label class="fieldlabels">Upload Your Video:</label> <input type="file" name="pic" accept="image/*">
+                                    
+
+                                    <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+
+                                </div>
+                            </fieldset>
+                        </form>    
+                        <!--Form CNA End-->
+
+                    </div>
+                </div>
+                <div class="col-12 col-sm-1 col-md-1 col-lg-2 col-xl-2 text-center p-0 mt-3 mb-2"></div>
+            </div>
+        </div>
+        
+
+
+<style>
+    * {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%
+}
+
+p {
+    color: grey
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #673AB7;
+    font-weight: normal
+}
+
+.msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+.msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+.msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+.msform input,
+.msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+.msform input:focus,
+.msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #673AB7;
+    outline-width: 0
+}
+
+.msform .action-button {
+    width: 100px;
+    background: #673AB7;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+.msform .action-button:hover,
+.msform .action-button:focus {
+    background-color: #311B92
+}
+
+.msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+.msform .action-button-previous:hover,
+.msform .action-button-previous:focus {
+    background-color: #000000
+}
+h3 {
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #673AB7;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color: #673AB7;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #673AB7
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 20%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f0f0"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f0f2"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+#progressbar #location:before {
+    font-family: FontAwesome;
+    content: "\f02e";
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #673AB7
+}
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    background-color: #673AB7
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+.justify-content-center{
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+/* The container */
+.container-in {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container-in input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container-in:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container-in input:checked ~ .checkmark {
+  background-color: #673AB7;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container-in input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container-in .checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+
+/*
+=====
+CORE STYLES
+=====
+*/
+
+.toggle{
+  --uiToggleSize: var(--toggleSize, 1.25rem);
+  --uiToggleBorderWidth: var(--toggleBorderWidth, 2px);
+  --uiToggleColor: var(--toggleColor, #222);
+
+  display: var(--toggleDisplay, inline-flex);
+  position: relative;
+}
+
+.toggle__input{
+  /*
+  The pattern by Sara Soueidan https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/
+  */
+  width: var(--uiToggleSize);
+  height: var(--uiToggleSize);
+  opacity: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+/*
+1. Calculation of the gap for the custom checkbox
+*/
+
+.toggle__label{
+  display: inline-flex;
+  min-height: var(--uiToggleSize);
+  padding-left: calc(var(--uiToggleSize) + var(--toggleIndent, .4em));
+}
+
+.toggle__input:not(:disabled) ~ .toggle__label{
+  cursor: pointer;
+}
+
+/*
+1. Ems helps to calculate size of the checkbox
+*/
+
+.toggle__label::after{
+  content: "";
+  box-sizing: border-box;  
+  width: 1em;
+  height: 1em;
+  font-size: var(--uiToggleSize); /* 1 */
+
+  background-color: transparent;
+  border: var(--uiToggleBorderWidth) solid var(--uiToggleColor);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.toggle__input:checked ~ .toggle__label::after{
+  background-color: #673AB7;
+}
+
+.toggle__text{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/*
+The arrow size and position depends from sizes of square because I needed an arrow correct positioning from the top left corner of the element toggle
+
+1. Ems helps to calculate size and position of the arrow
+*/
+
+.toggle__label::before{
+  content: "";
+  width: 0;
+  height: 0;
+  font-size: var(--uiToggleSize); /* 1 */
+
+  border-left-width: 0;
+  border-bottom-width: 0;
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-color: var(--toggleArrowColor, #fff);
+
+  position: absolute;
+  top: .5428em;
+  left: .25em;
+  z-index: 3;
+
+  transform-origin: left top;
+  transform: rotate(-40deg) skew(10deg);
+}
+
+.toggle__input:checked ~ .toggle__label::before{
+  --uiToggleArrowWidth: var(--toggleArrowWidth, 2px);
+
+  width: .4em;
+  height: .2em;
+  border-left-width: var(--uiToggleArrowWidth);
+  border-bottom-width: var(--uiToggleArrowWidth);
+}
+
+/*
+States
+*/
+
+/* focus state */
+
+ /*.toggle:focus-within{
+  outline: var(--toggleOutlineWidthFocus, 3px) solid var(--toggleOutlineColorFocus, currentColor);
+  outline-offset: var(--toggleOutlineOffsetFocus, 5px);
+} 
+*/
+
+/* disabled state */
+
+.toggle__input:disabled ~ .toggle__label{
+  opacity: var(--toggleOpacityDisabled, .24);
+  cursor: var(--toggleCursorDisabled, not-allowed);
+  user-select: none;
+}
+
+/*
+=====
+PRESENTATION STYLES
+=====
+*/
+
+/* 
+The demo skin
+*/
+
+.toggle__label::after{
+  border-radius: var(--toggleBorderRadius, 2px);
+}
+
+/* 
+The animation of switching states
+*/
+
+.toggle__input:not(:disabled) ~ .toggle__label::before{
+  will-change: width, height;
+  opacity: 0;
+}
+
+.toggle__input:not(:disabled):checked ~ .toggle__label::before{
+  opacity: 1;
+  transition: opacity .1s ease-out .25s, width .1s ease-out .5s, height .2s ease-out .3s;
+}
+
+.toggle__input:not(:disabled) ~ .toggle__label::after{
+  will-change: background-color;
+  transition: background-color .2s ease-out;
+}
+
+/*
+=====
+DEMO
+=====
+*/
+.page__toggle{
+  margin-top: 1.25rem;
+  margin-right: 1.5rem;
+  font-size: var(--pageToggleTextFontSize);
+}
+</style>
+<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+var current = 1;
+var steps = $("fieldset").length;
+
+setProgressBar(current);
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(++current);
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(--current);
+});
+
+function setProgressBar(curStep){
+var percent = parseFloat(100 / steps) * curStep;
+percent = percent.toFixed();
+$(".progress-bar")
+.css("width",percent+"%")
+}
+
+$(".submit").click(function(){
+return false;
+})
+});
+</script>
+<script type="text/javascript">
+    function enableDisableTB(){
+    var others = document.getElementById('otherRadio');
+    var othertx = document.getElementById('otherText');
+
+    othertx.disabled = others.checked ? false : true;
+    if(!othertx.disabled){
+        othertx.focus();
+    }
+}
+
+//VALIDACION CHECKBOX
+function validacion(formu, obj) {
+  limite=1; //limite de checks a seleccionar
+  num=0;
+  if (obj.checked) {
+    for (i=0; ele=document.getElementById(formu).children[i]; i++)
+      if (ele.checked) num++;
+  if (num>limite)
+    obj.checked=false;
+  }
+}
+
+function mostrar(id) {
+    if (id == "cna") {
+        $("#cna").show();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "stna") {
+        $("#cna").hide();
+        $("#stna").show();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "rn") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").show();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "rnpd") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").show();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "rncm") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").show();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "lpn") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").show();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "hha") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").show();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "caregiver") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").show();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "hcsr") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").show();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "lic") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").show();
+        $("#cc").hide();
+        $("#homemaker").hide();
+    }
+    if (id == "cc") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").show();
+        $("#homemaker").hide();
+    }
+    if (id == "homemaker") {
+        $("#cna").hide();
+        $("#stna").hide();
+        $("#rn").hide();
+        $("#rnpd").hide();
+        $("#rncm").hide();
+        $("#lpn").hide();
+        $("#hha").hide();
+        $("#caregiver").hide();
+        $("#hcsr").hide();
+        $("#lic").hide();
+        $("#cc").hide();
+        $("#homemaker").show();
+    }
+}
+</script>
+
+    </body>
+</html>
