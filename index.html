@@ -42,13 +42,21 @@
                         <!--Form CNA-->
                         <form id="cna"  class="msform" style="display: none;">
                             <!-- progressbar -->
-                            <ul id="progressbar">
-                                <li class="active" id="personal"><strong>Personal Information</strong></li>
-                                <li id="location"><strong>General Information</strong></li>
-                                <li id="account"><strong>Professional Information</strong></li>
-                                <li id="payment"><strong>Education and Training</strong></li>
-                                <li id="confirm"><strong>Interview Video</strong></li>
-                            </ul>
+                            <thead>
+                                <tr>
+                                  <th scope="col">[Current Step #]</th>
+                                  <th scope="col">[Percent Loaded]</th>
+                                  <th scope="col">[Total # of Steps]</th>                                    
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">Step 1</th>
+                                  <td>20%</td>
+                                  <td>5</td>                                    
+                                </tr>                        
+                              </tbody>
+                            </table>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                             </div> 
